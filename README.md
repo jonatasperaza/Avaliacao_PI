@@ -11,7 +11,7 @@ Sistema de gestão escolar desenvolvido com Django e Django REST Framework.
 
 1. Clone o repositório:
 ```bash
-git clone 
+git clone https://github.com/jonatasperaza/Avaliacao_PI
 cd Avaliacao_PI
 ```
 
