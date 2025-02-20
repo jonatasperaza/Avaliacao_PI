@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from core.escola.models import Turma
+from core.escola.modelosteste import Turma
 
 
 class TurmaSerializer(serializers.ModelSerializer):

@@ -1,5 +1,5 @@
 from django.db import models
-from core.escola.models import User
+from core.escola.modelosteste import User
 
 class Professor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

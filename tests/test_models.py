@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-from core.escola.models import Escola, Turma, Professor, Aluno
+from core.escola.modelosteste import Escola, Turma, Professor, Aluno
 from datetime import date
 
 class ModelTestCase(TestCase):

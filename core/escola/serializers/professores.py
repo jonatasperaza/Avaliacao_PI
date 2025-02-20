@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from core.escola.models import Professor
+from core.escola.modelosteste import Professor
 from core.escola.serializers.user import UserSerializer
 
 class ProfessorSerializer(serializers.ModelSerializer):

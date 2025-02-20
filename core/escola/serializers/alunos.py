@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from core.escola.models import Aluno
+from core.escola.modelosteste import Aluno
 from core.escola.serializers.user import UserSerializer
 
 class AlunoSerializer(serializers.ModelSerializer):

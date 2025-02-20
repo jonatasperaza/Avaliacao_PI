@@ -1,6 +1,6 @@
 from django.db import models
-from core.escola.models import User
-from core.escola.models import Escola
+from core.escola.modelosteste import User
+from core.escola.modelosteste import Escola
 
 class Turma(models.Model):
     nome = models.CharField(max_length=255)

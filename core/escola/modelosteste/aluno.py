@@ -1,5 +1,5 @@
 from django.db import models
-from core.escola.models import User, Turma
+from core.escola.modelosteste import User, Turma
 
 class Aluno(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)

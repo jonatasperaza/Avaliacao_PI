@@ -1,5 +1,5 @@
 from django.contrib import admin
-import core.escola.models as models
+import core.escola.modelosteste as models
 
 
 admin.site.register(models.Escola)

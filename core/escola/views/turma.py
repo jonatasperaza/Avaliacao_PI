@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from core.escola.models import Turma
+from core.escola.modelosteste import Turma
 from core.escola.serializers.turma import TurmaSerializer
 
 class TurmaViewSet(viewsets.ModelViewSet):

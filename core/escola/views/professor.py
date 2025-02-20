@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from core.escola.models import Professor
+from core.escola.modelosteste import Professor
 from core.escola.serializers.professores import ProfessorSerializer
 
 class ProfessorViewSet(viewsets.ModelViewSet):

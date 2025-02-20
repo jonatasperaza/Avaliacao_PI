@@ -1,38 +1,24 @@
-"""
-URL configuration for config project.
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.1/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+# config/urls.py
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import redirect
-from rest_framework.routers import DefaultRouter
-from core.escola.views.user import UserViewSet
-from core.escola.views.aluno import AlunoViewSet
-from core.escola.views.professor import ProfessorViewSet
-from core.escola.views.escola import EscolaViewSet
-from core.escola.views.turma import TurmaViewSet
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.reverse import reverse
 
-router = DefaultRouter()
-router.register(r'users', UserViewSet)
-router.register(r'alunos', AlunoViewSet)
-router.register(r'professores', ProfessorViewSet)
-router.register(r'escolas', EscolaViewSet)
-router.register(r'turmas', TurmaViewSet)
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response({
+        'users': reverse('user-list', request=request, format=format),
+        'alunos': reverse('aluno-list', request=request, format=format),
+        'professores': reverse('professor-list', request=request, format=format),
+        'escolas': reverse('escola-list', request=request, format=format),
+        'turmas': reverse('turma-list', request=request, format=format),
+        'cordenacao': reverse('cordenacao-root', request=request, format=format),
+    })
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('', lambda request: redirect('api/')),
+    path('api/', api_root, name='api-root'),
+    path('api/', include('core.escola.urls')),  # Inclui as rotas principais
+    path('api/cordenacao/', include('core.escola.cordenacao.urls')),  # Inclui as rotas de cordenacao
 ]

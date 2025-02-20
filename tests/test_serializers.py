@@ -1,6 +1,6 @@
 from django.test import TestCase
 from core.escola.serializers import EscolaSerializer, ProfessorSerializer
-from core.escola.models import Escola
+from core.escola.modelosteste import Escola
 
 class SerializerTestCase(TestCase):
     def setUp(self):
